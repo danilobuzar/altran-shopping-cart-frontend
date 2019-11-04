@@ -1,0 +1,34 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="header">
+  <div>Shopping Cart - Danilo Buzar</div>
+  <mat-form-field>
+    <mat-label>User</mat-label>
+    <mat-select [(value)]="selected" (selectionChange)="setUser()">
+      <mat-option [value]="user.id" *ngFor="let user of UsersData">{{user.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+    [fixedTopGap]>
+    <mat-nav-list>
+      <a mat-list-item routerLinkActive="active" routerLink="/products-list">
+        <mat-icon>format_list_bulleted</mat-icon> Products
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/users-list">
+        <mat-icon>format_list_bulleted</mat-icon> Users
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/cart-list">
+        <mat-icon>format_list_bulleted</mat-icon> Shopping Cart
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
