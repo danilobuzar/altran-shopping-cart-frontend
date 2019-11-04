@@ -26,7 +26,7 @@
 
 ![Users list](/docs/images/users-list-1.png)
 
-## If none user exists, them you'll se an empty list
+## If none user exists, then you'll se an empty list
 
 ![Users list](/docs/images/users-list-2.png)
 
