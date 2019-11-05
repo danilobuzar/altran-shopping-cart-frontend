@@ -32,7 +32,7 @@ export class EditProductComponent implements OnInit {
     this.productApi.GetProduct(id).subscribe(data => {
       this.productForm = this.fb.group({
         name: [data.name, [Validators.required]],
-        value: [data.value, [Validators.required]]
+        value: [data.value, [Validators.required, Validators.min(1)]]
       });
     });
   }

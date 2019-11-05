@@ -21,7 +21,7 @@ export class AddProductComponent implements OnInit {
   error: null;
 
   ngOnInit() {
-    this.submitBookForm();
+    this.submitForm();
   }
 
   constructor(
@@ -31,11 +31,10 @@ export class AddProductComponent implements OnInit {
     private productApi: ApiService
   ) {}
 
-  /* Reactive book form */
-  submitBookForm() {
+  submitForm() {
     this.productForm = this.fb.group({
       name: ["", [Validators.required]],
-      value: ["", [Validators.required]]
+      value: ["", [Validators.required, Validators.min(1)]]
     });
   }
 
